@@ -696,6 +696,30 @@ body.light-mode .close-btn:hover {
     main { padding: 0 50px; }
     nav ul { display: none; } /* Simple mobile solution, can be replaced with a burger menu */
     .about-content { grid-template-columns: 1fr; }
+    .nav-right {
+    /* Allow the container to be more flexible */
+    flex-grow: 1; 
+    justify-content: flex-end;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap; /* This is the key property! */
+    justify-content: center; /* Center the links when they wrap */
+    gap: 1rem 1.5rem; /* Adjust vertical and horizontal gap */
+    list-style: none; /* Ensure styles from desktop are maintained */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    font-size: 0.8rem; /* Make font smaller to fit better */
+    padding: 5px;
+}
+
+.resume-button {
+    padding: 5px 10px; /* Adjust resume button padding */
+}
 }
 
 @media (max-width: 480px) {
