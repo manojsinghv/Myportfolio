@@ -1,5 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+const navLinks = document.getElementById('nav-links');
+
+if (hamburgerMenu && navLinks) {
+    hamburgerMenu.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('is-active');
+        navLinks.classList.toggle('is-active');
+    });
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerMenu.classList.remove('is-active');
+            navLinks.classList.remove('is-active');
+        });
+    });
+}
+
     // --- Preloader ---
     const preloader = document.querySelector('.preloader');
     window.addEventListener('load', () => {
